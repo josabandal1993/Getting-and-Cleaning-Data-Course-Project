@@ -60,12 +60,13 @@ print(filtereddat) #Tidy data set for numbers, 1-4
 aggregatedmean = filtereddat
 #Aggregate the filtereddat by subject participant followed by
 #their corresponding activity
-aggregatedmean = aggregate(aggregatedmean[3:81], by=list(aggregatedmean$subject,aggregatedmean$activity),
+aggregatedmean = aggregate(aggregatedmean[3:81], by=list(aggregatedmean$activity,aggregatedmean$subject),
                            FUN=mean, na.rm = TRUE)
 names(aggregatedmean)[1] <- "subject"
 names(aggregatedmean)[2] <- "activity"
 
 #Number 5
 print(aggregatedmean) #Tidy data set for number 5
-#Take note that the explicit direction was to save the data with parameters row.names = FALSE.
-aggregated.txt = write.table(aggregatedmean, file = "newdataset.txt" ,row.names = FALSE)
+#Note that the explicit direction was to save the new dataset with parameters row.names = FALSE
+write.table(aggregatedmean, file = "newdataset.txt" ,row.names = FALSE)
+
