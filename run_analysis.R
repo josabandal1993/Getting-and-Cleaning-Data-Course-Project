@@ -60,7 +60,7 @@ print(filtereddat) #Tidy data set for numbers, 1-4
 aggregatedmean = filtereddat
 #Aggregate the filtereddat by subject participant followed by
 #their corresponding activity
-aggregatedmean = aggregate(aggregatedmean[3:81], by=list(aggregatedmean$activity,aggregatedmean$subject),
+aggregatedmean = aggregate(aggregatedmean[3:81], by=list(aggregatedmean$subject,aggregatedmean$activity),
                            FUN=mean, na.rm = TRUE)
 names(aggregatedmean)[1] <- "subject"
 names(aggregatedmean)[2] <- "activity"
