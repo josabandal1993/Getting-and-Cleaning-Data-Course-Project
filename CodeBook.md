@@ -44,10 +44,6 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 The complete list of variables of each feature vector is available in 'newfeatures.txt'
 
 Added vectors:
- <br /> $subject<br /> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
- <br /> $dataset<br /> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Determines wether the data is from train or test set.
  <br /> $activity<br /> 
 	Contains what type of action performed  	
 	1. Laying
@@ -56,3 +52,5 @@ Added vectors:
   	4. Walking
  	5. Walking_Downstairs
   	6. Walking_Upstairs
+ <br /> $subject<br /> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
