@@ -4,21 +4,21 @@ train_x = read.table("UCIHARDataset/train/X_train.txt")
 train_y = read.table("UCIHARDataset/train/y_train.txt")
 train_sub = read.table("UCIHARDataset/train/subject_train.txt")
 train = c("train") #Creating a category column for training dataset
-train_data = cbind(train_sub,train_y,train_x)
+train_data = cbind(train_y,train_sub,train_x)
 
 #Reading the test dataset
 test_x = read.table("UCIHARDataset/test/X_test.txt")
 test_y = read.table("UCIHARDataset/test/y_test.txt")
 test_sub = read.table("UCIHARDataset/test/subject_test.txt")
 test = c("test") #Creating a category column for test dataset
-test_data = cbind(test_sub,test_y,test_x)
+test_data = cbind(test_y,test_sub,test_x)
 
 #Merging train and test dataset
 ##Changing the column names for smooth merging
-names(train_data)[1] <- "subject"
-names(test_data)[1] <- "subject"
-names(train_data)[2] <- "activity"
-names(test_data)[2] <- "activity"
+names(train_data)[1] <- "activity"
+names(test_data)[1] <- "activity"
+names(train_data)[2] <- "subject"
+names(test_data)[2] <- "subject"
 
 ##Combine the test and train dataset using rbind since they contain same set of columns
 
@@ -60,13 +60,12 @@ print(filtereddat) #Tidy data set for numbers, 1-4
 aggregatedmean = filtereddat
 #Aggregate the filtereddat by subject participant followed by
 #their corresponding activity
-aggregatedmean = aggregate(aggregatedmean[3:81], by=list(aggregatedmean$subject,aggregatedmean$activity),
+aggregatedmean = aggregate(aggregatedmean[3:81], by=list(aggregatedmean$activity,aggregatedmean$subject),
                            FUN=mean, na.rm = TRUE)
-names(aggregatedmean)[1] <- "subject"
-names(aggregatedmean)[2] <- "activity"
+names(aggregatedmean)[1] <- "activity"
+names(aggregatedmean)[2] <- "subject"
 
 #Number 5
 print(aggregatedmean) #Tidy data set for number 5
 #Note that the explicit direction was to save the new dataset with parameters row.names = FALSE
 write.table(aggregatedmean, file = "newdataset.txt" ,row.names = FALSE)
-
