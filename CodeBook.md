@@ -48,11 +48,11 @@ Added vectors:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
  <br /> $dataset<br /> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Determines wether the data is from train or test set.
- <br /> $activity
+ <br /> $activity<br /> 
 	Contains what type of action performed  	
-	* a. Laying
-  	* b. Sitting
-  	* c. Standing
-  	* d. Walking
- 	* e. Walking_Downstairs
-  	* f. Walking_Upstairs
+	1. Laying
+  	2. Sitting
+  	3. anding
+  	4. Walking
+ 	5. Walking_Downstairs
+  	6. Walking_Upstairs
