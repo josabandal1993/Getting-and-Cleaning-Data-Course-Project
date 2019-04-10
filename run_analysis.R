@@ -29,8 +29,10 @@ print(dat)
 features <- read.table("UCIHARDataset/features.txt", header=FALSE)
 mean <- grep("*mean*",features[,2])
 std <- grep("*std",features[,2])
-loc <- sort(c(mean,std)) #Now we have the location of the features that contains mean and standard deviation
-
+Mean <- grep("*Mean",features[,2])
+loc <- sort(c(mean,std,Mean))
+#Now we have the location of the features that contains mean and standard deviation
+#Note that we used mean, Mean, and std as word search for grep
 #This portion saves only the features with mean and standard deviation note that we added "3"
 #in loc to compensate for the subject,dataset, activity variables; thus completes number 2
 filtereddat <- dat[,c(1:2,loc+2)]
