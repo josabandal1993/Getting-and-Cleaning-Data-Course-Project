@@ -67,5 +67,5 @@ names(aggregatedmean)[2] <- "activity"
 
 #Number 5
 print(aggregatedmean) #Tidy data set for number 5
-
-aggregated.txt = write.table(aggregatedmean, file = "newdataset.txt" ,row.names = FALSE, col.names = TRUE)
+#Take note that the explicit direction was to save the data with parameters row.names = FALSE.
+aggregated.txt = write.table(aggregatedmean, file = "newdataset.txt" ,row.names = FALSE)
